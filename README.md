@@ -41,3 +41,6 @@ function secondsightify(t) {
     }
 }
 ```
+
+So I decided to publish a refactored version online, I only made it prettier, not better.
+You can find it [here](https://github.com/ArjixWasTaken/3y3/blob/main/3y3.js).
