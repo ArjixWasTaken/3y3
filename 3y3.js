@@ -1,3 +1,8 @@
+const detect = (/**@type {string}*/ text) => {
+    const codePoints = [...text].map((c) => c.codePointAt(0));
+    return codePoints.some(c => 0xe0000 < c && c < 0xe007f)
+}
+
 const encode = (/**@type {string}*/ text) => {
   const codePoints = [...text].map((c) => c.codePointAt(0));
 
