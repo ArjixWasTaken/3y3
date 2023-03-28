@@ -16,3 +16,28 @@ Let me hang out on your credits list!
 
 I don't really know who that is, or their github profile, so thats the only credit I can give.
  
+The original source-code is ugly to say the least...
+
+```js
+function secondsightify(t) {
+			if([...t].some(x=>(0xe0000<x.codePointAt(0)&&x.codePointAt(0)<0xe007f))) { document.querySelector('#conversion').innerText="3y3 text detected. Revealing...";return (t=>([...t].map(x=>(0xe0000<x.codePointAt(0)&&x.codePointAt(0)<0xe007f)?String.fromCodePoint(x.codePointAt(0)-0xe0000):x).join``))(t) } 
+			else { document.querySelector('#conversion').innerHTML="No 3y3 text detected. Concealing...<br/><small>It'll appear empty. Press Ctrl-A and copy to get your hidden text.</small>";return (t=>[...t].map(x=>(0x00<x.codePointAt(0)&&x.codePointAt(0)<0x7f)?`${String.fromCodePoint(x.codePointAt(0)+0xe0000)}`:x).join``)(t) }
+		}
+		function update() {
+			document.getElementById('output').value = secondsightify(document.getElementById('input').value);
+		}
+```
+
+Even when you beautify it and clean it up it is still ugly
+
+```js
+function secondsightify(t) {
+    if ([...t].some(x => (0xe0000 < x.codePointAt(0) && x.codePointAt(0) < 0xe007f))) {
+        // 3y3 text detected. Revealing...
+        return (t => ([...t].map(x => (0xe0000 < x.codePointAt(0) && x.codePointAt(0) < 0xe007f) ? String.fromCodePoint(x.codePointAt(0) - 0xe0000) : x).join("")))(t)
+    } else {
+        // No 3y3 text was found, Encoding...
+        return (t => [...t].map(x => (0x00 < x.codePointAt(0) && x.codePointAt(0) < 0x7f) ? String.fromCodePoint(x.codePointAt(0)+0xe0000) : x).join(""))(t)
+    }
+}
+```
