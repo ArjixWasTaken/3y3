@@ -4,7 +4,7 @@ Hide text in plain sight, using invisible characters.
 # Credit
 Credit goes to https://synthetic.garden/3y3.htm
 
-I only re-implemented their algorithm into ease-to-use encode/decode functions.
+I only re-implemented their algorithm into easy-to-use encode/decode functions.
 
 Here is the message left by the dev:
 ```
